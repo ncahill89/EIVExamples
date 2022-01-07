@@ -1,0 +1,6 @@
+library(R2jags)
+library(runjags)
+library(tidyverse)
+library(tidybayes)
+library(fields)
+library(mvtnorm)
