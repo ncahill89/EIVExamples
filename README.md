@@ -3,7 +3,7 @@ This repository contains code to simulate from and run errors-in-variables simpl
 
 You will need to install the JAGS software in order for the code to run. You will can download from [here](https://sourceforge.net/projects/mcmc-jags/).
 
-Download the repo and open the EIV.proj file in Rstudio. Then open the `main_script.R` to run the code. 
+Download the repo and open the `EIV.proj` file in Rstudio. Then open the `main_script.R` to run the code. 
 
 Required R packages are: 
 
