@@ -8,7 +8,7 @@ dat <- sim_slr(n_sim = 30,
                alpha = 0,
                beta = 1,
                age_err = 200)
-dat <- read_csv("NJ_example.csv")
+
 ### plot the data + true regression line
 plot_dat(dat,
          alpha = 0,
