@@ -25,7 +25,7 @@ reg_est(mod = mod1)
 plot_results(mod1,
              dat = dat,
              alpha = 0,
-             beta = 1)
+             beta = 1) # exclude alpha & beta arguments if you don't want to plot the true line
 
 ### run the EIV-regression model
 mod2 <- run_jags(dat,
@@ -38,29 +38,28 @@ reg_est(mod = mod2)
 plot_results(mod2,
              dat = dat,
              alpha = 0,
-             beta = 1)
+             beta = 1) # exclude alpha & beta arguments if you don't want to plot the true line
 
 ### compare reg with EIV-reg
 plot_results(mod1,
              mod2,
              dat,
              alpha = 0,
-             beta = 1)
+             beta = 1) # exclude alpha & beta arguments if you don't want to plot the true line
 
 
-# Gaussian Processes ------------------------------------------------------
+# Gaussian Processes (these will take longer to run)------------------------------------------------------
 
 
 ### simulate data
 dat <- sim_gp(n_sim = 10,
               phi = 4,
               sigma_g = 2,
-              age_err = 200)
+              age_err = 200) # changing phi and sigma_g will change the shape of the GP
 
 ### plot the data and true underlying process
 p <- plot_dat(dat)
 p + geom_line(data = dat, aes(x = age, y = true_gp),color="green", size=1.5, linetype="dashed")
-
 
 ### run the GP model
 mod1 <- run_jags(dat,
@@ -72,7 +71,7 @@ pred_res1 <- gp_est(mod = mod1)
 ### plot GP results + truth
 p1 <- plot_results_gp(mod1,
                      dat = dat)
-p1 + geom_line(data = dat, aes(x = age, y = true_gp),color="green", size=1.5, linetype="dashed")
+p1 + geom_line(data = dat, aes(x = age, y = true_gp),color="green", size=1.5, linetype="dashed") # don't add this if you don't want to add the true line
 
 ### run the EIV-GP model
 mod2 <- run_jags(dat,
@@ -84,12 +83,12 @@ pred_res2 <- gp_est(mod = mod1)
 ### plot EIV-GP results + Truth
 p2 <- plot_results_gp(mod2,
                      dat = dat)
-p2 + geom_line(data = dat, aes(x = age, y = true_gp),color="green", size=1.5, linetype="dashed")
+p2 + geom_line(data = dat, aes(x = age, y = true_gp),color="green", size=1.5, linetype="dashed") # don't add this if you don't want to add the true line
 
 
 ## compare GP with EIV-GP
 p_compare <- plot_results_gp(mod1,
                      mod2,
                      dat = dat)
-p_compare + geom_line(data = dat, aes(x = age, y = true_gp),color="green", size=1.5, linetype="dashed")
+p_compare + geom_line(data = dat, aes(x = age, y = true_gp),color="green", size=1.5, linetype="dashed") # don't add this if you don't want to add the true line
 
