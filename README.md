@@ -14,4 +14,4 @@ Required R packages are:
   - fields
   - mvtnorm
 
-I have also created a shiny app for exploring EIV with simple linear regresion which you can find [here](https://niamhcahill.shinyapps.io/ExploreEIV/?_ga=2.38566883.1578472151.1642023320-1680552844.1641500119)
+I have also created this [shiny app](https://niamhcahill.shinyapps.io/ExploreEIV/?_ga=2.38566883.1578472151.1642023320-1680552844.1641500119) for exploring EIV with simple linear regresion.
